@@ -1,0 +1,11 @@
+
+.vs/
+.env
+/TouristHelp/[Bb]in/
+/TouristHelp/[Oo]bj/
+/TouristHelp/[Bb]in/*
+/TouristHelp/[Oo]bj/*
+/packages/*
+/packages/
+TouristHelp/App_Data/TouristHelp.mdf
+TouristHelp/App_Data/TouristHelp_log.ldf

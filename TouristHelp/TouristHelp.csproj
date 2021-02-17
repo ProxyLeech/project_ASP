@@ -1,0 +1,990 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD7D3608-B5F2-4335-ADAA-3940697FD277}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TouristHelp</RootNamespace>
+    <AssemblyName>TouristHelp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44385</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <TypeScriptTarget>ES5</TypeScriptTarget>
+    <TypeScriptJSXEmit>React</TypeScriptJSXEmit>
+    <TypeScriptModuleKind />
+    <TypeScriptCompileOnSaveEnabled>True</TypeScriptCompileOnSaveEnabled>
+    <TypeScriptNoImplicitAny>False</TypeScriptNoImplicitAny>
+    <TypeScriptRemoveComments>False</TypeScriptRemoveComments>
+    <TypeScriptOutFile />
+    <TypeScriptOutDir />
+    <TypeScriptGeneratesDeclarations>False</TypeScriptGeneratesDeclarations>
+    <TypeScriptNoEmitOnError>True</TypeScriptNoEmitOnError>
+    <TypeScriptSourceMap>True</TypeScriptSourceMap>
+    <TypeScriptMapRoot />
+    <TypeScriptSourceRoot />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=19.1.0.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <HintPath>..\packages\AjaxControlToolkit.19.1.0\lib\net40\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Authenticator, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\GoogleAuthenticator.2.1.1\lib\net45\Google.Authenticator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=1.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.1.1.2\lib\net451\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.5.1.2\lib\net451\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="QRCoder, Version=1.3.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\QRCoder.1.3.9\lib\net40\QRCoder.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=5.1.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.5.1.2\lib\net451\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DataVisualization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Twilio, Version=5.53.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Twilio.5.53.1\lib\net451\Twilio.dll</HintPath>
+    </Reference>
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="accountDelete.aspx" />
+    <Content Include="AdminModule.aspx" />
+    <Content Include="AdminPageAddAttraction.aspx" />
+    <Content Include="AdminPageUpdateAttraction.aspx" />
+    <Content Include="AdminPageHotel.aspx" />
+    <Content Include="AdminPageHotel2.aspx" />
+    <Content Include="AdminPageRewardSystem.aspx" />
+    <Content Include="AdminPageShop.aspx" />
+    <Content Include="App_Data\db_reconstruct.sql" />
+    <Content Include="App_Data\TouristHelp.mdf" />
+    <Content Include="App_Data\TouristHelp_log.ldf">
+      <DependentUpon>TouristHelp.mdf</DependentUpon>
+    </Content>
+    <Content Include="Auth2FA.aspx" />
+    <Content Include="Captcha.aspx" />
+    <Content Include="CheckoutPage.aspx" />
+    <Content Include="confirmPhone.aspx" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="email2FA.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="firstLoginPage.aspx" />
+    <Content Include="ForgotPasswordPage.aspx" />
+    <Content Include="getAuthCode.aspx" />
+    <Content Include="HotelPageLO.aspx" />
+    <Content Include="Images\chinatown.jpg" />
+    <Content Include="Images\index\guidebook.jpg" />
+    <Content Include="Images\index\hotel.jpg" />
+    <Content Include="Images\index\planner.jpg" />
+    <Content Include="Images\index\rewards.jpg" />
+    <Content Include="Images\index\tickets.jpg" />
+    <Content Include="Images\index\tourguide.jpg" />
+    <Content Include="Images\Orchard_Road.jpg" />
+    <Content Include="IndexAdmin.aspx" />
+    <Content Include="IndexLO.aspx" />
+    <Content Include="LoginNotVerified.aspx" />
+    <Content Include="logout.aspx" />
+    <Content Include="LogViewer.aspx" />
+    <Content Include="phone2FA.aspx" />
+    <Content Include="RegisterEmailConfirm.aspx" />
+    <Content Include="RegisterEmailVerify.aspx" />
+    <Content Include="RegisterMobileVerify.aspx" />
+    <Content Include="ResetPasswordPage.aspx" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <None Include="Scripts\jquery-3.5.1.intellisense.js" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.js" />
+    <Content Include="Scripts\jquery-3.5.1.min.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.js" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.js" />
+    <Content Include="security2FA.aspx" />
+    <Content Include="securityInfo.aspx" />
+    <Content Include="StatisticsPage.aspx" />
+    <Content Include="Styles\2FA.css" />
+    <Content Include="Styles\email2FA.css" />
+    <Content Include="Styles\settings.css" />
+    <Content Include="TicketClaim.aspx" />
+    <Content Include="TicketingLO.aspx" />
+    <Content Include="DLL\QRCoder.dll" />
+    <Content Include="Global.asax" />
+    <Content Include="Guidebook.aspx" />
+    <Content Include="HotelConfirm.aspx" />
+    <Content Include="HotelDetail.aspx" />
+    <Content Include="HotelPage.aspx" />
+    <Content Include="HotelReservation.aspx" />
+    <Content Include="Images\breadcrumb_bg.png" />
+    <Content Include="Images\Carlton.jpg" />
+    <Content Include="Images\favicon.png" />
+    <Content Include="Images\gbtb.jpg" />
+    <Content Include="Images\goldMember.jpg" />
+    <Content Include="Images\hiltonGarden.jpg" />
+    <Content Include="Images\iconicFood.jpg" />
+    <Content Include="Images\katong.jpg" />
+    <Content Include="Images\logo.jpg" />
+    <Content Include="Images\map-marker.png" />
+    <Content Include="Images\marinaBay.png" />
+    <Content Include="Images\Marriott.jpg" />
+    <Content Include="Images\Orchard.jpg" />
+    <Content Include="Images\parkAvenue.jpg" />
+    <Content Include="Images\Sentosa.png" />
+    <Content Include="Images\signin-image.jpg" />
+    <Content Include="Images\signup-image.jpg" />
+    <Content Include="Images\silverMember.png" />
+    <Content Include="Images\splash.jpg" />
+    <Content Include="Images\starbucks.jpg" />
+    <Content Include="Images\uss.jpg" />
+    <Content Include="Index.aspx" />
+    <Content Include="InterestSelect.aspx" />
+    <Content Include="List_Reservation_Food.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="Planner.aspx" />
+    <Content Include="RegisterTG.aspx" />
+    <Content Include="RegisterTourist.aspx" />
+    <Content Include="AdminPageAddAttraction_2.aspx" />
+    <Content Include="Reservation_Food_QR_Claim.aspx" />
+    <Content Include="Reservation_Food_QR.aspx" />
+    <Content Include="Reservation_Food.aspx" />
+    <Content Include="Reservation_Food_Confirmed.aspx" />
+    <Content Include="RewardPage.aspx" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="LoginRegister.Master" />
+    <Content Include="Images\Thumbs.db" />
+    <Content Include="Scripts\esm\popper-utils.js" />
+    <Content Include="Scripts\esm\popper-utils.min.js" />
+    <Content Include="Scripts\esm\popper.js" />
+    <Content Include="Scripts\esm\popper.min.js" />
+    <Content Include="Scripts\index.js.flow" />
+    <Content Include="Scripts\esm\popper.min.js.map" />
+    <Content Include="Scripts\esm\popper.js.map" />
+    <Content Include="Scripts\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\esm\popper-utils.js.map" />
+    <Content Include="libman.json" />
+    <Content Include="DLL\QRCoder.dll.refresh" />
+    <Content Include="Default.Master" />
+    <Content Include="noMasterPage.Master" />
+    <Content Include="Admin.Master" />
+    <None Include="Properties\PublishProfiles\TouristHelp20200208051613 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TouristHelp20200208080154 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TouristHelp20200209023102 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TouristHelp20200209024920 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\TouristHelp20200209044754 - Web Deploy.pubxml" />
+    <Content Include="Scripts\login.js" />
+    <Content Include="Scripts\popper-utils.js" />
+    <Content Include="Scripts\popper-utils.min.js" />
+    <Content Include="Scripts\popper.js" />
+    <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\src\index.js" />
+    <Content Include="Scripts\src\methods\defaults.js" />
+    <Content Include="Scripts\src\methods\destroy.js" />
+    <Content Include="Scripts\src\methods\disableEventListeners.js" />
+    <Content Include="Scripts\src\methods\enableEventListeners.js" />
+    <Content Include="Scripts\src\methods\placements.js" />
+    <Content Include="Scripts\src\methods\update.js" />
+    <Content Include="Scripts\src\modifiers\applyStyle.js" />
+    <Content Include="Scripts\src\modifiers\arrow.js" />
+    <Content Include="Scripts\src\modifiers\computeStyle.js" />
+    <Content Include="Scripts\src\modifiers\flip.js" />
+    <Content Include="Scripts\src\modifiers\hide.js" />
+    <Content Include="Scripts\src\modifiers\index.js" />
+    <Content Include="Scripts\src\modifiers\inner.js" />
+    <Content Include="Scripts\src\modifiers\keepTogether.js" />
+    <Content Include="Scripts\src\modifiers\offset.js" />
+    <Content Include="Scripts\src\modifiers\preventOverflow.js" />
+    <Content Include="Scripts\src\modifiers\shift.js" />
+    <Content Include="Scripts\src\utils\clockwise.js" />
+    <Content Include="Scripts\src\utils\computeAutoPlacement.js" />
+    <Content Include="Scripts\src\utils\debounce.js" />
+    <Content Include="Scripts\src\utils\find.js" />
+    <Content Include="Scripts\src\utils\findCommonOffsetParent.js" />
+    <Content Include="Scripts\src\utils\findIndex.js" />
+    <Content Include="Scripts\src\utils\getBordersSize.js" />
+    <Content Include="Scripts\src\utils\getBoundaries.js" />
+    <Content Include="Scripts\src\utils\getBoundingClientRect.js" />
+    <Content Include="Scripts\src\utils\getClientRect.js" />
+    <Content Include="Scripts\src\utils\getFixedPositionOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetParent.js" />
+    <Content Include="Scripts\src\utils\getOffsetRect.js" />
+    <Content Include="Scripts\src\utils\getOffsetRectRelativeToArbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getOppositePlacement.js" />
+    <Content Include="Scripts\src\utils\getOppositeVariation.js" />
+    <Content Include="Scripts\src\utils\getOuterSizes.js" />
+    <Content Include="Scripts\src\utils\getParentNode.js" />
+    <Content Include="Scripts\src\utils\getPopperOffsets.js" />
+    <Content Include="Scripts\src\utils\getReferenceNode.js" />
+    <Content Include="Scripts\src\utils\getReferenceOffsets.js" />
+    <Content Include="Scripts\src\utils\getRoot.js" />
+    <Content Include="Scripts\src\utils\getRoundedOffsets.js" />
+    <Content Include="Scripts\src\utils\getScroll.js" />
+    <Content Include="Scripts\src\utils\getScrollParent.js" />
+    <Content Include="Scripts\src\utils\getStyleComputedProperty.js" />
+    <Content Include="Scripts\src\utils\getSupportedPropertyName.js" />
+    <Content Include="Scripts\src\utils\getViewportOffsetRectRelativeToArtbitraryNode.js" />
+    <Content Include="Scripts\src\utils\getWindow.js" />
+    <Content Include="Scripts\src\utils\getWindowSizes.js" />
+    <Content Include="Scripts\src\utils\includeScroll.js" />
+    <Content Include="Scripts\src\utils\index.js" />
+    <Content Include="Scripts\src\utils\isBrowser.js" />
+    <Content Include="Scripts\src\utils\isFixed.js" />
+    <Content Include="Scripts\src\utils\isFunction.js" />
+    <Content Include="Scripts\src\utils\isIE.js" />
+    <Content Include="Scripts\src\utils\isModifierEnabled.js" />
+    <Content Include="Scripts\src\utils\isModifierRequired.js" />
+    <Content Include="Scripts\src\utils\isNumeric.js" />
+    <Content Include="Scripts\src\utils\isOffsetContainer.js" />
+    <Content Include="Scripts\src\utils\removeEventListeners.js" />
+    <Content Include="Scripts\src\utils\runModifiers.js" />
+    <Content Include="Scripts\src\utils\setAttributes.js" />
+    <Content Include="Scripts\src\utils\setStyles.js" />
+    <Content Include="Scripts\src\utils\setupEventListeners.js" />
+    <Content Include="Scripts\umd\popper-utils.js" />
+    <Content Include="Scripts\umd\popper-utils.min.js" />
+    <Content Include="Scripts\umd\popper.js" />
+    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="SendMailToTourGuide.aspx" />
+    <Content Include="Shop.aspx" />
+    <Content Include="ShoppingCart.aspx" />
+    <Content Include="Styles\animate.css" />
+    <Content Include="Styles\liner_icon.css" />
+    <Content Include="Styles\login.css" />
+    <Content Include="Styles\owl.carousel.min.css" />
+    <Content Include="Styles\search.css" />
+    <Content Include="Styles\navbar.css" />
+    <Content Include="Styles\themify-icons.css" />
+    <Content Include="Styles\Ticketing\style.css" />
+    <Content Include="TicketConfirm.aspx" />
+    <Content Include="TicketDetail.aspx" />
+    <Content Include="Ticketing.aspx" />
+    <Content Include="TicketList.aspx" />
+    <Content Include="TourDetailsPage.aspx" />
+    <Content Include="TourGuideDetails.aspx" />
+    <Content Include="TourGuideListPage.aspx" />
+    <Content Include="TourGuideRequestsPage.aspx" />
+    <Content Include="TourGuideUpdateDetails.aspx" />
+    <Content Include="TourGuideUpdateTour.aspx" />
+    <Content Include="TouristBookingsPage.aspx" />
+    <Content Include="TransactionConfirm.aspx" />
+    <Content Include="TransactionDetail.aspx" />
+    <Content Include="TransactionPage.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="accountDelete.aspx.cs">
+      <DependentUpon>accountDelete.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="accountDelete.aspx.designer.cs">
+      <DependentUpon>accountDelete.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin.Master.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin.Master.designer.cs">
+      <DependentUpon>Admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="AdminModule.aspx.cs">
+      <DependentUpon>AdminModule.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminModule.aspx.designer.cs">
+      <DependentUpon>AdminModule.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageAddAttraction.aspx.cs">
+      <DependentUpon>AdminPageAddAttraction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageAddAttraction.aspx.designer.cs">
+      <DependentUpon>AdminPageAddAttraction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageUpdateAttraction.aspx.cs">
+      <DependentUpon>AdminPageUpdateAttraction.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageUpdateAttraction.aspx.designer.cs">
+      <DependentUpon>AdminPageUpdateAttraction.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageHotel.aspx.cs">
+      <DependentUpon>AdminPageHotel.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageHotel.aspx.designer.cs">
+      <DependentUpon>AdminPageHotel.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageHotel2.aspx.cs">
+      <DependentUpon>AdminPageHotel2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageHotel2.aspx.designer.cs">
+      <DependentUpon>AdminPageHotel2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageRewardSystem.aspx.cs">
+      <DependentUpon>AdminPageRewardSystem.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageRewardSystem.aspx.designer.cs">
+      <DependentUpon>AdminPageRewardSystem.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageShop.aspx.cs">
+      <DependentUpon>AdminPageShop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageShop.aspx.designer.cs">
+      <DependentUpon>AdminPageShop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Auth2FA.aspx.cs">
+      <DependentUpon>Auth2FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Auth2FA.aspx.designer.cs">
+      <DependentUpon>Auth2FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BLL\Attraction.cs" />
+    <Compile Include="BLL\Cart.cs" />
+    <Compile Include="BLL\EmailVerification.cs" />
+    <Compile Include="BLL\HotelBook.cs" />
+    <Compile Include="BLL\HotelTrans.cs" />
+    <Compile Include="BLL\Interest.cs" />
+    <Compile Include="BLL\Food_Reservation.cs" />
+    <Compile Include="BLL\Logs.cs" />
+    <Compile Include="BLL\PasswordHistory.cs" />
+    <Compile Include="BLL\Reward.cs" />
+    <Compile Include="BLL\SHA256Hash.cs" />
+    <Compile Include="BLL\ShopVoucher.cs" />
+    <Compile Include="BLL\Ticket.cs" />
+    <Compile Include="BLL\Transactions.cs" />
+    <Compile Include="Captcha.aspx.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Captcha.aspx.designer.cs">
+      <DependentUpon>Captcha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckoutPage.aspx.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckoutPage.aspx.designer.cs">
+      <DependentUpon>CheckoutPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="confirmPhone.aspx.cs">
+      <DependentUpon>confirmPhone.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="confirmPhone.aspx.designer.cs">
+      <DependentUpon>confirmPhone.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AttractionDAO.cs" />
+    <Compile Include="DAL\CartDAO.cs" />
+    <Compile Include="DAL\DirectionDAO.cs" />
+    <Compile Include="DAL\EmailVerificationDAO.cs" />
+    <Compile Include="DAL\HotelBookDAO.cs" />
+    <Compile Include="DAL\HotelTransDAO.cs" />
+    <Compile Include="DAL\InterestDAO.cs" />
+    <Compile Include="DAL\Food_ReservationDAO.cs" />
+    <Compile Include="DAL\LogsDAO.cs" />
+    <Compile Include="DAL\PasswordHistoryDAO.cs" />
+    <Compile Include="DAL\RewardDAO.cs" />
+    <Compile Include="DAL\ShopVoucherDAO.cs" />
+    <Compile Include="DAL\TicketDAO.cs" />
+    <Compile Include="DAL\ToursDAO.cs" />
+    <Compile Include="DAL\TransactionDAO.cs" />
+    <Compile Include="DAL\UserDAO.cs" />
+    <Compile Include="Default.Master.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.Master.designer.cs">
+      <DependentUpon>Default.Master</DependentUpon>
+    </Compile>
+    <Compile Include="email2FA.aspx.cs">
+      <DependentUpon>email2FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="email2FA.aspx.designer.cs">
+      <DependentUpon>email2FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="firstLoginPage.aspx.cs">
+      <DependentUpon>firstLoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="firstLoginPage.aspx.designer.cs">
+      <DependentUpon>firstLoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ForgotPasswordPage.aspx.cs">
+      <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ForgotPasswordPage.aspx.designer.cs">
+      <DependentUpon>ForgotPasswordPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="getAuthCode.aspx.cs">
+      <DependentUpon>getAuthCode.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="getAuthCode.aspx.designer.cs">
+      <DependentUpon>getAuthCode.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelPageLO.aspx.cs">
+      <DependentUpon>HotelPageLO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelPageLO.aspx.designer.cs">
+      <DependentUpon>HotelPageLO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexAdmin.aspx.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexAdmin.aspx.designer.cs">
+      <DependentUpon>IndexAdmin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="IndexLO.aspx.cs">
+      <DependentUpon>IndexLO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="IndexLO.aspx.designer.cs">
+      <DependentUpon>IndexLO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginNotVerified.aspx.cs">
+      <DependentUpon>LoginNotVerified.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginNotVerified.aspx.designer.cs">
+      <DependentUpon>LoginNotVerified.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="logout.aspx.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="logout.aspx.designer.cs">
+      <DependentUpon>logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LogViewer.aspx.cs">
+      <DependentUpon>LogViewer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LogViewer.aspx.designer.cs">
+      <DependentUpon>LogViewer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="noMasterPage.Master.cs">
+      <DependentUpon>noMasterPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="noMasterPage.Master.designer.cs">
+      <DependentUpon>noMasterPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="phone2FA.aspx.cs">
+      <DependentUpon>phone2FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="phone2FA.aspx.designer.cs">
+      <DependentUpon>phone2FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterEmailConfirm.aspx.cs">
+      <DependentUpon>RegisterEmailConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterEmailConfirm.aspx.designer.cs">
+      <DependentUpon>RegisterEmailConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterEmailVerify.aspx.cs">
+      <DependentUpon>RegisterEmailVerify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterEmailVerify.aspx.designer.cs">
+      <DependentUpon>RegisterEmailVerify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterMobileVerify.aspx.cs">
+      <DependentUpon>RegisterMobileVerify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterMobileVerify.aspx.designer.cs">
+      <DependentUpon>RegisterMobileVerify.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ResetPasswordPage.aspx.cs">
+      <DependentUpon>ResetPasswordPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ResetPasswordPage.aspx.designer.cs">
+      <DependentUpon>ResetPasswordPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="security2FA.aspx.cs">
+      <DependentUpon>security2FA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="security2FA.aspx.designer.cs">
+      <DependentUpon>security2FA.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="securityInfo.aspx.cs">
+      <DependentUpon>securityInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="securityInfo.aspx.designer.cs">
+      <DependentUpon>securityInfo.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="StatisticsPage.aspx.cs">
+      <DependentUpon>StatisticsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StatisticsPage.aspx.designer.cs">
+      <DependentUpon>StatisticsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketClaim.aspx.cs">
+      <DependentUpon>TicketClaim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketClaim.aspx.designer.cs">
+      <DependentUpon>TicketClaim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketingLO.aspx.cs">
+      <DependentUpon>TicketingLO.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketingLO.aspx.designer.cs">
+      <DependentUpon>TicketingLO.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Guidebook.aspx.cs">
+      <DependentUpon>Guidebook.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Guidebook.aspx.designer.cs">
+      <DependentUpon>Guidebook.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelConfirm.aspx.cs">
+      <DependentUpon>HotelConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelConfirm.aspx.designer.cs">
+      <DependentUpon>HotelConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelDetail.aspx.cs">
+      <DependentUpon>HotelDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelDetail.aspx.designer.cs">
+      <DependentUpon>HotelDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelPage.aspx.cs">
+      <DependentUpon>HotelPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelPage.aspx.designer.cs">
+      <DependentUpon>HotelPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HotelReservation.aspx.cs">
+      <DependentUpon>HotelReservation.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HotelReservation.aspx.designer.cs">
+      <DependentUpon>HotelReservation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InterestSelect.aspx.cs">
+      <DependentUpon>InterestSelect.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InterestSelect.aspx.designer.cs">
+      <DependentUpon>InterestSelect.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="List_Reservation_Food.aspx.cs">
+      <DependentUpon>List_Reservation_Food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="List_Reservation_Food.aspx.designer.cs">
+      <DependentUpon>List_Reservation_Food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginRegister.Master.cs">
+      <DependentUpon>LoginRegister.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginRegister.Master.designer.cs">
+      <DependentUpon>LoginRegister.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Direction.cs" />
+    <Compile Include="Models\Tours.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Planner.aspx.cs">
+      <DependentUpon>Planner.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Planner.aspx.designer.cs">
+      <DependentUpon>Planner.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterTG.aspx.cs">
+      <DependentUpon>RegisterTG.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterTG.aspx.designer.cs">
+      <DependentUpon>RegisterTG.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisterTourist.aspx.cs">
+      <DependentUpon>RegisterTourist.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisterTourist.aspx.designer.cs">
+      <DependentUpon>RegisterTourist.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPageAddAttraction_2.aspx.cs">
+      <DependentUpon>AdminPageAddAttraction_2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPageAddAttraction_2.aspx.designer.cs">
+      <DependentUpon>AdminPageAddAttraction_2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation_Food_QR_Claim.aspx.cs">
+      <DependentUpon>Reservation_Food_QR_Claim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservation_Food_QR_Claim.aspx.designer.cs">
+      <DependentUpon>Reservation_Food_QR_Claim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation_Food_QR.aspx.cs">
+      <DependentUpon>Reservation_Food_QR.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservation_Food_QR.aspx.designer.cs">
+      <DependentUpon>Reservation_Food_QR.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation_Food.aspx.cs">
+      <DependentUpon>Reservation_Food.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservation_Food.aspx.designer.cs">
+      <DependentUpon>Reservation_Food.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reservation_Food_Confirmed.aspx.cs">
+      <DependentUpon>Reservation_Food_Confirmed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reservation_Food_Confirmed.aspx.designer.cs">
+      <DependentUpon>Reservation_Food_Confirmed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RewardPage.aspx.cs">
+      <DependentUpon>RewardPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RewardPage.aspx.designer.cs">
+      <DependentUpon>RewardPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SendMailToTourGuide.aspx.cs">
+      <DependentUpon>SendMailToTourGuide.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SendMailToTourGuide.aspx.designer.cs">
+      <DependentUpon>SendMailToTourGuide.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Shop.aspx.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Shop.aspx.designer.cs">
+      <DependentUpon>Shop.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ShoppingCart.aspx.designer.cs">
+      <DependentUpon>ShoppingCart.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TicketConfirm.aspx.cs">
+      <DependentUpon>TicketConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketConfirm.aspx.designer.cs">
+      <DependentUpon>TicketConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketDetail.aspx.cs">
+      <DependentUpon>TicketDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketDetail.aspx.designer.cs">
+      <DependentUpon>TicketDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Ticketing.aspx.cs">
+      <DependentUpon>Ticketing.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ticketing.aspx.designer.cs">
+      <DependentUpon>Ticketing.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TicketList.aspx.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TicketList.aspx.designer.cs">
+      <DependentUpon>TicketList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourDetailsPage.aspx.cs">
+      <DependentUpon>TourDetailsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourDetailsPage.aspx.designer.cs">
+      <DependentUpon>TourDetailsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourGuideDetails.aspx.cs">
+      <DependentUpon>TourGuideDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourGuideDetails.aspx.designer.cs">
+      <DependentUpon>TourGuideDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourGuideListPage.aspx.cs">
+      <DependentUpon>TourGuideListPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourGuideListPage.aspx.designer.cs">
+      <DependentUpon>TourGuideListPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourGuideLoggedIn.Master.cs">
+      <DependentUpon>TourGuideLoggedIn.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourGuideLoggedIn.Master.designer.cs">
+      <DependentUpon>TourGuideLoggedIn.Master</DependentUpon>
+    </Compile>
+    <Compile Include="TourGuideRequestsPage.aspx.cs">
+      <DependentUpon>TourGuideRequestsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourGuideRequestsPage.aspx.designer.cs">
+      <DependentUpon>TourGuideRequestsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourGuideUpdateDetails.aspx.cs">
+      <DependentUpon>TourGuideUpdateDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourGuideUpdateDetails.aspx.designer.cs">
+      <DependentUpon>TourGuideUpdateDetails.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TourGuideUpdateTour.aspx.cs">
+      <DependentUpon>TourGuideUpdateTour.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TourGuideUpdateTour.aspx.designer.cs">
+      <DependentUpon>TourGuideUpdateTour.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TouristBookingsPage.aspx.cs">
+      <DependentUpon>TouristBookingsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TouristBookingsPage.aspx.designer.cs">
+      <DependentUpon>TouristBookingsPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionConfirm.aspx.cs">
+      <DependentUpon>TransactionConfirm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TransactionConfirm.aspx.designer.cs">
+      <DependentUpon>TransactionConfirm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionDetail.aspx.cs">
+      <DependentUpon>TransactionDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TransactionDetail.aspx.designer.cs">
+      <DependentUpon>TransactionDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="TransactionPage.aspx.cs">
+      <DependentUpon>TransactionPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TransactionPage.aspx.designer.cs">
+      <DependentUpon>TransactionPage.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Site.Master" />
+    <Content Include="Scripts\umd\popper.min.js.map" />
+    <Content Include="Scripts\umd\popper.js.map" />
+    <Content Include="Scripts\umd\popper.js.flow" />
+    <Content Include="Scripts\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\umd\popper-utils.js.map" />
+    <Content Include="Scripts\README.md" />
+    <Content Include="Scripts\popper.min.js.map" />
+    <Content Include="Scripts\popper.js.map" />
+    <Content Include="Scripts\popper-utils.min.js.map" />
+    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="TourGuideLoggedIn.Master" />
+    <Content Include="Scripts\jquery-3.5.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.5.1.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\index.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DefaultPages\" />
+    <Folder Include="TourGuidePages\" />
+    <Folder Include="TouristPages\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>7988</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44385/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
