@@ -37,8 +37,7 @@
                             <asp:Label ID="labelAccountLocked" runat="server" Text="" ForeColor="Red"></asp:Label>
                             <div>
 
-                         <%--    <asp:CustomValidator ID="CustomValidator2" runat="server" ErrorMessage="Invalid syntax, please try again" OnServerValidate="CustomValidator2_ServerValidate" ForeColor="Red" Display="Dynamic"></asp:CustomValidator>
-                                <asp:Label ID="labelAccountLocked" runat="server" Text="" ForeColor="Red"></asp:Label>--%>
+                    
 
                             </div>
                             <div class="form-group form-button">
